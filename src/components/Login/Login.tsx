@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { dataMessages, getRandomAvatar, users } from '../../data'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const [userId, setUserId] = useState<number | null>(null)
-
+  const negative = useNavigate()
   const handleUserLogin = () => {
     if (!userId) return
     if (userId < 1) {
@@ -47,6 +48,7 @@ export default function Login() {
 
     localStorage.setItem('userId', JSON.stringify(userId))
     localStorage.setItem('isLoggedIn', 'true')
+    negative('/chat')
   }
 
   return (

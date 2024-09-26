@@ -15,7 +15,7 @@ export default function NavBar({
   userName,
   handleLogout
 }: NavBarProps) {
-  const [active, setActive] = useState('/')
+  const [active, setActive] = useState('/chat')
 
   return (
     <div className='bg-[#D6D7F1] flex flex-[20%] flex-col h-full text-[#9EA8BB]'>

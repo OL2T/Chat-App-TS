@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react'
 import Login from '../Login'
 import NavBar from '../NavBar/NavBar'
 import Content from '../Content/Content'
+import { useNavigate } from 'react-router-dom'
 
 export default function Layout() {
   const [userId, setUserId] = useState(localStorage.getItem('userId'))
   const [userName, setUserName] = useState('')
   const [avatar, setAvatar] = useState('')
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (userId) {
@@ -24,6 +27,7 @@ export default function Layout() {
     localStorage.removeItem('userId')
     localStorage.removeItem('isLoggedIn')
     setUserId(null)
+    navigate('/')
   }
   return (
     <div className='relative bg-gradient-to-tr from-[#A07BF4] to-[#F9B6BD] h-dvh w-full'>
