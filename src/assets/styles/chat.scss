@@ -1,0 +1,37 @@
+.message-list,
+.friend-list {
+  padding-right: 10px;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 30px;
+    max-height: 30px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    // background: #fafafa;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #c1c5ce;
+    border-radius: 5px;
+    max-height: 30px;
+    height: 30px !important;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+  }
+}
+
+.limit-text {
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // line-clamp: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
